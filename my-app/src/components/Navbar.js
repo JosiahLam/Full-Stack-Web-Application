@@ -9,7 +9,7 @@ function Navbar() {
     const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
-    const CloseMobileMenu = () => setClick(false);
+    const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
         if(window.innerWidth <= 960) {
@@ -33,28 +33,26 @@ function Navbar() {
                         TREL <i className='fab fa-typo3' />
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
-                        {/* User can toggle between meun and page */}
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> 
                     </div>
-                    {/* After a user clicks a meun item, the meun closes */}
-                    <ul className={click ? 'nav-meun active' : 'nav-meun'}>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={CloseMobileMenu}>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Home
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/services' className='nav-links' onClick={CloseMobileMenu}>
+                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
                                 Services
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-links' onClick={CloseMobileMenu}>
+                            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
                                 Products
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links-mobile' onClick={CloseMobileMenu}>
+                            <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Sign Up
                             </Link>
                         </li>
@@ -66,4 +64,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Navbar;
